@@ -1,0 +1,22 @@
+{
+    "aws_region": "us-east-1",
+    "role_arn": "arn:aws:iam::YOUR-AWS-ACCOUNT-ID:role/NFCAuthRole",
+    "role_session_name": "nfc-auth-session",
+    "session_duration_seconds": 900,
+    "auth_server": {
+        "host": "localhost",
+        "port": 5001,
+        "endpoint": "/auth/aws-token"
+    },
+    "vault_settings": {
+        "iterations": 100000,
+        "algorithm": "PBKDF2-SHA256",
+        "key_length": 32
+    },
+    "security": {
+        "max_attempts_per_hour": 10,
+        "lockout_duration_minutes": 60,
+        "device_fingerprint_required": true,
+        "ip_binding_enabled": false
+    }
+}
